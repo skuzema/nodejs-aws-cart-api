@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "aws-lambda"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -11,5 +12,8 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true
-  }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
