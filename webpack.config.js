@@ -7,6 +7,7 @@ module.exports = function (options) {
     externals: [],
     output: {
       ...options.output,
+      filename: 'bundle.js',
       libraryTarget: 'commonjs2',
     },
     plugins: [
