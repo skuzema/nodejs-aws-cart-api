@@ -1,12 +1,14 @@
 var webpack = require('webpack');
+var path = require('path');
+
 module.exports = function (options) {
   const { plugins, ...config } = options;
   return {
-    ...options,
+    ...config,
     entry: ['./src/lambda.ts'],
     externals: [],
     output: {
-      ...options.output,
+      path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
       libraryTarget: 'commonjs2',
     },
