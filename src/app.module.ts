@@ -13,7 +13,7 @@ import { User } from './entities/user.entity';
 import { Product } from './entities/product.entity';
 
 dotenv.config();
-
+console.log('app.modules.ts process.env:', process.env);
 @Module({
   imports: [
     AuthModule,
@@ -26,8 +26,10 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [Cart, CartItem, Order, User, Product],
       synchronize: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
     TypeOrmModule.forFeature([Cart, CartItem, Order, User, Product]),
   ],

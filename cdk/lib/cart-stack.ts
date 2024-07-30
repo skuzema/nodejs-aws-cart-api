@@ -19,13 +19,15 @@ export class CartStack extends cdk.Stack {
       DB_DATABASE: process.env.DB_DATABASE || '',
     };
 
+    console.log('cart-stack.ts environment:', environment);
+
     const cartServiceLambda = new lambda.Function(this, 'CartServiceLambda', {
       runtime: lambda.Runtime.NODEJS_20_X,
       handler: 'bundle.handler',
       code: lambda.Code.fromAsset(
         'C:/Users/skuze/OneDrive/Документы/Sergej/Kursi/AWS Cloud Developer/Task8_card/nodejs-aws-cart-api/dist',
       ),
-      timeout: cdk.Duration.seconds(5),
+      timeout: cdk.Duration.seconds(15),
       environment,
     });
 
