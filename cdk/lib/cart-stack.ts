@@ -19,8 +19,6 @@ export class CartStack extends cdk.Stack {
       DB_DATABASE: process.env.DB_DATABASE || '',
     };
 
-    console.log('cart-stack.ts environment:', environment);
-
     const cartServiceLambda = new lambda.Function(this, 'CartServiceLambda', {
       runtime: lambda.Runtime.NODEJS_20_X,
       handler: 'bundle.handler',
