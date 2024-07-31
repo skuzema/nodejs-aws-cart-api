@@ -13,7 +13,7 @@ import { User } from './entities/user.entity';
 import { Product } from './entities/product.entity';
 
 dotenv.config();
-console.log('process.env app.module.ts:', process.env);
+
 @Module({
   imports: [
     AuthModule,
