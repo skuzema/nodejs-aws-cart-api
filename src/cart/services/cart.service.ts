@@ -28,6 +28,7 @@ export class CartService {
   }
 
   findOrCreateByUserId(userId: string): Cart {
+    // console.log('userId:', userId);
     const userCart = this.findByUserId(userId);
 
     if (userCart) {
